@@ -1,0 +1,72 @@
+{# templates/eportfoliocontroller/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon CV{% endblock %}
+
+{% block body %}
+    <div style="display: flex; justify-content: center; background-color: #f0f0f0; padding: 20px;">
+        <div style="max-width: 800px; display: flex; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <div style="background-color: salmon; padding: 20px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; width: 50%;">
+                <div class="contact-info" style="color: black;">
+                    <h2>Informations de Contact</h2>
+                    <p>Nom et prénom : Zakri Yassine</p>
+                    <p>Email: zakryassin06@gmail.com</p>
+                    <p>Téléphone: +33 851727234</p>
+                </div>
+                <div class="section" style="color: black;">
+                    <h2>Langues Parlées</h2>
+                    <ul>
+                        <li>Arabe: Langue maternelle</li>
+                        <li>Français: Niveau professionnel</li>
+                        <li>Anglais: Niveau professionnel</li>
+                    </ul>
+                </div>
+                <div class="section" style="color: black;">
+                    <h2>Formation</h2>
+                    <ul>
+                    <li> Baccalauréat en Sciences Physiques et Chimie </li>
+                    <p>Mention Bien</p>
+                    <p>2023 - 2024</p>
+                    <li>BUT Réseaux et Télécommunications</li> 
+                    <p> 2024-2027</p>
+                    </ul>
+                </div>
+            </div>
+            <div style="background-color: white; padding: 20px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; width: 50%;">
+                <div class="section" style="color: black;">
+                    <h2>Expérience</h2>
+                    <p><strong>Bénévolat dans une association sociale</strong> - 2023-2024</p>
+                    <ul>
+                        <li>Participation à donner des idées pour développer des transactions.</li>
+                        <li>Support des personnes handicapées.</li>
+                        <li>Lutte contre la drogue.</li>
+                    </ul>
+                    <p><strong>Membre dans une équipe de création web</strong></p>
+                    <ul>
+                        <li>Création de sites web.</li>
+                        <li>Gestion des comptes réseaux sociaux.</li>
+                        <li>Création de designs et logos.</li>
+                    </ul>
+                </div>
+                <div class="section" style="color: black;">
+                    <h2>Compétences</h2>
+                    <ul>
+                        <li>Logiciels Office</li>
+                        <li>Adobe Photoshop</li>
+                        <li>Visual Studio</li>
+                        <li>Packet Tracer</li>
+                        <li>Wireshark</li>
+                    </ul>
+                </div>
+                <div class="section" style="color: black;">
+                    <h2>Activités Extra-professionnelles</h2>
+                    <p><strong>Joueur dans une équipe de football</strong></p>
+                    <ul>
+                        <li>Développement psychique et physique.</li>
+                        <li>Ambition de gagner.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }} {# Conserve les styles existants #}
+    <style>
+        .beige-box {
+            background-color: #f5f5dc; /* Couleur beige */
+            padding: 20px;
+            border-radius: 10px; /* Bordures arrondies */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            margin: 20px auto; /* Centrage horizontal */
+            max-width: 800px; /* Largeur maximale du cadre */
+            text-align: justify; /* Justification du texte */
+        }
+        .beige-box p {
+            margin-bottom: 20px; /* Espacement entre les paragraphes */
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Présentation of me</h1>
+            
+            <!-- Cadre beige pour le texte -->
+            <div class="beige-box">
+                <p>
+                    I am Yassine Zakri, a motivated and ambitious first-year student pursuing a degree in Networks and Telecommunications (BUT). I have a strong academic background in Physical and Chemical Sciences, having earned my baccalaureate with honors. I have gained valuable experience through volunteering at a social association, where I contributed ideas to develop initiatives, supported individuals with disabilities, and participated in anti-drug campaigns. Additionally, as a member of a web development team, I have developed skills in creating websites, managing social media accounts, and designing logos and graphics. I am proficient in tools like Microsoft Office, Adobe Photoshop, Visual Studio, Packet Tracer, and Wireshark, which I use to bring my technical projects to life. Outside of academics and work, I am passionate about football, where I focus on mental and physical development and strive to achieve success as part of a team. I am committed to continuous learning and growth, both personally and professionally, and I am excited to apply my skills and experiences to new challenges.
+                </p>
+                
+            </div>
+
+            <!-- Boutons pour CV et ePortfolio -->
+            <p><strong><u>You can find my CV and ePortfolio below.</u></strong></p>
+            <a href="/cv" class="btn btn-primary m-2">My CV</a>
+            <a href="/portfolio" class="btn btn-secondary m-2">My ePortfolio</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
