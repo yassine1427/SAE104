@@ -19,7 +19,7 @@ final class EportfolioController extends AbstractController
         ]);
     }
 
-    #[Route('/c', name: 'app_cv')]
+    #[Route('/cv', name: 'app_cv')]
     public function cv(): Response
     {
         return $this->render('cv.html.twig');
