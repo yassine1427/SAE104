@@ -17,6 +17,13 @@
         .beige-box p {
             margin-bottom: 20px; /* Espacement entre les paragraphes */
         }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
     </style>
 {% endblock %}
 
@@ -28,17 +35,84 @@
             
             <!-- Cadre beige pour le texte -->
             <div class="beige-box">
-                <p>
-                    I am Yassine Zakri, a motivated and ambitious first-year student pursuing a degree in Networks and Telecommunications (BUT). I have a strong academic background in Physical and Chemical Sciences, having earned my baccalaureate with honors. I have gained valuable experience through volunteering at a social association, where I contributed ideas to develop initiatives, supported individuals with disabilities, and participated in anti-drug campaigns. Additionally, as a member of a web development team, I have developed skills in creating websites, managing social media accounts, and designing logos and graphics. I am proficient in tools like Microsoft Office, Adobe Photoshop, Visual Studio, Packet Tracer, and Wireshark, which I use to bring my technical projects to life. Outside of academics and work, I am passionate about football, where I focus on mental and physical development and strive to achieve success as part of a team. I am committed to continuous learning and growth, both personally and professionally, and I am excited to apply my skills and experiences to new challenges.
-                </p>
-                
-            </div>
 
-            <!-- Boutons pour CV et ePortfolio -->
-            <p><strong><u>You can find my CV and ePortfolio below.</u></strong></p>
-            <a href="/cv" class="btn btn-primary m-2">My CV</a>
-            <a href="/portfolio" class="btn btn-secondary m-2">My ePortfolio</a>
+                
+                <div class="contact-info" style="color: black;">
+                    <h2>About me</h2>
+                    <p><strong>Surname :</strong> Zakri </p>
+                    <p><strong>Name :</strong> Yassine </p>
+                    <p><strong>Email:</strong> zakryassin06@gmail.com</p>
+                    <p><strong>Group:</strong> B2</p>
+                </div>
+                
+                <!-- Boutons pour CV et ePortfolio -->
+                <p><strong>You can find my CV and ePortfolio below.</strong></p>
+                <a href="/cv" class="btn btn-primary m-2">My CV</a>
+                <a href="/portfolio" class="btn btn-secondary m-2">My ePortfolio</a>
+                <p><strong>If you are interested in my profile, please feel free to fill out the form below.</strong></p>
+
+                <!-- Formulaire -->
+                <form id="contactForm" action="/submit-form" method="POST">
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" class="form-control" required>
+                        <div id="firstNameError" class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" class="form-control" required>
+                        <div id="lastNameError" class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                        <div id="emailError" class="error-message"></div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
+
+<!-- Script pour la validation du formulaire -->
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        let isValid = true;
+
+        // Validation du prénom
+        const firstName = document.getElementById('firstName').value;
+        const firstNameError = document.getElementById('firstNameError');
+        if (!firstName.match(/^[A-Za-zÀ-ÿ\s'-]+$/)) {
+            firstNameError.textContent = 'First name contains invalid characters.';
+            isValid = false;
+        } else {
+            firstNameError.textContent = '';
+        }
+
+        // Validation du nom
+        const lastName = document.getElementById('lastName').value;
+        const lastNameError = document.getElementById('lastNameError');
+        if (!lastName.match(/^[A-Za-zÀ-ÿ\s'-]+$/)) {
+            lastNameError.textContent = 'Last name contains invalid characters.';
+            isValid = false;
+        } else {
+            lastNameError.textContent = '';
+        }
+
+        // Validation de l'email
+        const email = document.getElementById('email').value;
+        const emailError = document.getElementById('emailError');
+        if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            emailError.textContent = 'Please enter a valid email address.';
+            isValid = false;
+        } else {
+            emailError.textContent = '';
+        }
+
+        if (!isValid) {
+            event.preventDefault(); // Empêche l'envoi du formulaire si invalide
+        }
+    });
+</script>
 {% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Thank You{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="display-4">Thank you, {{ firstName }} {{ lastName }}, for your interest.</h1>
+            <form action="{{ path('generate_pdf') }}" method="POST" class="mt-3">
+                <input type="hidden" name="firstName" value="{{ firstName }}">
+                <input type="hidden" name="lastName" value="{{ lastName }}">
+                <button type="submit" class="btn btn-danger">Download CV as PDF</button>
+            </form>
+            <form action="{{ path('generate_docx') }}" method="POST" class="mt-3">
+                <input type="hidden" name="firstName" value="{{ firstName }}">
+                <input type="hidden" name="lastName" value="{{ lastName }}">
+                <button type="submit" class="btn btn-info">Download CV as DOCX</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
