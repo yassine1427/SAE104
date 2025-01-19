@@ -45,46 +45,4 @@ final class EportfolioController extends AbstractController
             'firstName' => $firstName,
             'lastName' => $lastName,
         ]);
-    }
-
-    #[Route('/generate-pdf', name: 'generate_pdf', methods: ['POST'])]
-    public function generatePdf(Request $request): Response
-    {
-        $firstName = $request->request->get('firstName');
-        $lastName = $request->request->get('lastName');
-
-        $html = $this->renderView('cv.html.twig', [
-            'firstName' => $firstName,
-            'lastName' => $lastName,
-        ]);
-
-        $mpdf = new Mpdf();
-        $mpdf->WriteHTML($html);
-        $pdfContent = $mpdf->Output('', 'S');
-
-        return new Response($pdfContent, 200, [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'attachment; filename="cv.pdf"',
-        ]);
-    }
-
-    #[Route('/generate-docx', name: 'generate_docx', methods: ['POST'])]
-    public function generateDocx(Request $request): Response
-    {
-        $firstName = $request->request->get('firstName');
-        $lastName = $request->request->get('lastName');
-
-        $phpWord = new PhpWord();
-        $section = $phpWord->addSection();
-        $section->addText('First Name: ' . $firstName);
-        $section->addText('Last Name: ' . $lastName);
-
-        $tempFile = tempnam(sys_get_temp_dir(), 'cv') . '.docx';
-        $phpWord->save($tempFile, 'Word2007');
-
-        return new Response(file_get_contents($tempFile), 200, [
-            'Content-Type' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-            'Content-Disposition' => 'attachment; filename="cv.docx"',
-        ]);
-    }
-}
+    } }
