@@ -19,30 +19,31 @@ final class EportfolioController extends AbstractController
         ]);
     }
 
-    #[Route('/cv', name: 'app_cv')]
-    public function cv(): Response
-    {
-        return $this->render('cv.html.twig');
-    }
+#[Route('/cv', name: 'app_cv')]
+public function cv(): Response
+{
+    return $this->render('cv.html.twig');
+}
 
-    #[Route('/submit-form', name: 'submit_form', methods: ['POST'])]
-    public function submitForm(Request $request): Response
-    {
-        $firstName = $request->request->get('firstName');
-        $lastName = $request->request->get('lastName');
+#[Route('/submit-form', name: 'submit_form', methods: ['POST'])]
+public function submitForm(Request $request): Response
+{
+    $firstName = $request->request->get('firstName');
+    $lastName = $request->request->get('lastName');
 
-        // Redirect to the thank you page with form data
-        return $this->redirectToRoute('thank_you', [
-            'firstName' => $firstName,
-            'lastName' => $lastName,
-        ]);
-    }
+    // Redirect to the thank you page with form data
+    return $this->redirectToRoute('thank_you', [
+        'firstName' => $firstName,
+        'lastName' => $lastName,
+    ]);
+}
 
-    #[Route('/thank_you/{firstName}/{lastName}', name: 'thank_you')]
-    public function thankYou(string $firstName, string $lastName): Response
-    {
-        return $this->render('eportfolio/thank_you.html.twig', [
-            'firstName' => $firstName,
-            'lastName' => $lastName,
-        ]);
-    } }
+#[Route('/thank_you/{firstName}/{lastName}', name: 'thank_you')]
+public function thankYou(string $firstName, string $lastName): Response
+{
+    return $this->render('eportfolio/thank_you.html.twig', [
+        'firstName' => $firstName,
+        'lastName' => $lastName,
+    ]);
+}
+}
