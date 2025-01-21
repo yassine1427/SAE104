@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Loisirs{% endblock %}
+
+{% block body %}
+<style>
+    /* Styles généraux */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .section {
+        margin-bottom: 2rem;
+    }
+
+    .section h1 {
+        font-size: 2rem;
+        color:rgb(255, 51, 0); /* Couleur bleue pour le titre principal */
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background-color:rgb(138, 187, 236);
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        max-width: 80%; /* Réduire la taille du cadre */
+        margin: 0 auto 2rem auto; /* Centrer le cadre */
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card img {
+        width: 50%; /* Réduire la taille de l'image */
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-bottom: 1rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+        color: #555;
+        text-align: center;
+    }
+
+    .card-double {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .card-double img {
+        width: 45%; /* Réduire la taille de l'image */
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .card-double p {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    /* Styles pour les écrans mobiles */
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+
+        .section h1 {
+            font-size: 1.75rem;
+        }
+
+        .card {
+            padding: 15px;
+        }
+
+        .card-double {
+            flex-direction: column;
+        }
+
+        .card-double img {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+</style>
+
+<div class="container">
+    <!-- Section Titre -->
+    <div class="section">
+        <h1 class="text-center">Mes Loisirs</h1>
+        <p class="text-center">Découvrez mes loisirs et passions en dehors de mes études.</p>
+    </div>
+
+    <!-- Section Loisirs -->
+    <div class="section">
+        <div class="card">
+            <img src="{{ asset('image/pic1.png') }}" alt="Football">
+            <p>Je suis passionné par le football. J'apprécie le travail d'équipe, la stratégie et l'esprit de compétition que ce sport offre.</p>
+        </div>
+        <div class="card card-double">
+            <img src="{{ asset('image/pic2.png') }}" alt="Programmation">
+            <p>La programmation est une véritable passion pour moi. J'apprécie particulièrement concevoir des sites web, développer des applications et explorer les innombrables opportunités qu'elle offre.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -24,6 +24,11 @@ public function cv(): Response
 {
     return $this->render('cv.html.twig');
 }
+#[Route('/loisirs', name: 'app_loisirs')]
+public function loisirs(): Response
+{
+    return $this->render('loisirs.html.twig');
+}
 
 #[Route('/submit-form', name: 'submit_form', methods: ['POST'])]
 public function submitForm(Request $request): Response
