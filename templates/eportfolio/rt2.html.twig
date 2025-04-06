@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RT2 - Connecter les entreprises et les usagers{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-5">RT2 - Connecter les entreprises et les usagers</h1>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC12.01</h5>
+                    <p class="card-text">Mesurer et analyser les signaux</p>
+                    <a href="{{ path('app_ac12', {'number': '01'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC12.02</h5>
+                    <p class="card-text">Caractériser des systèmes de transmissions élémentaires et découvrir la modélisation mathématique de leur fonctionnement</p>
+                    <a href="{{ path('app_ac12', {'number': '02'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC12.03</h5>
+                    <p class="card-text">Déployer des supports de transmission</p>
+                    <a href="{{ path('app_ac12', {'number': '03'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC12.05</h5>
+                    <p class="card-text">Communiquer avec un tiers (client, collaborateur...) et adapter son discours et sa langue à son interlocuteur</p>
+                    <a href="{{ path('app_ac12', {'number': '05'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

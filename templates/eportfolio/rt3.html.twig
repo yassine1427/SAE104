@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RT3 - Créer des outils et des applications informatiques pour les R&T{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-5">RT3 - Créer des outils et des applications informatiques pour les R&T</h1>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC13.01</h5>
+                    <p class="card-text">Utiliser un système informatique et ses outils</p>
+                    <a href="{{ path('app_ac13', {'number': '01'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC13.02</h5>
+                    <p class="card-text">Lire, exécuter, corriger et modifier un programme</p>
+                    <a href="{{ path('app_ac13', {'number': '02'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC13.03</h5>
+                    <p class="card-text">Traduire un algorithme, dans un langage et pour un environnement donné</p>
+                    <a href="{{ path('app_ac13', {'number': '03'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC13.04</h5>
+                    <p class="card-text">Connaître l'architecture et les technologies d'un site Web</p>
+                    <a href="{{ path('app_ac13', {'number': '04'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC13.05</h5>
+                    <p class="card-text">Choisir les mécanismes de gestion de données adaptés au développement de l'outil et argumenter ses choix</p>
+                    <a href="{{ path('app_ac13', {'number': '05'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC13.06</h5>
+                    <p class="card-text">S'intégrer dans un environnement propice au développement et au travail collaboratif</p>
+                    <a href="{{ path('app_ac13', {'number': '06'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

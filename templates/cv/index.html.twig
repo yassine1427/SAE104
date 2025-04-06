@@ -1,0 +1,368 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon CV{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .cv-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+    
+    .profile-image-container {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        display: block;
+        animation: imageAppear 1s ease-out;
+    }
+
+    @keyframes imageAppear {
+        from {
+            opacity: 0;
+            transform: scale(0.8) translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+    
+    .cv-card {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 30px;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 0.8s forwards;
+    }
+    
+    .cv-header {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 30px;
+        text-align: center;
+    }
+    
+    .cv-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    
+    .cv-header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+    
+    .cv-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .cv-sidebar {
+        width: 30%;
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-right: 1px solid #eee;
+    }
+    
+    .cv-main {
+        width: 70%;
+        padding: 30px;
+    }
+    
+    .section {
+        margin-bottom: 30px;
+        animation: fadeIn 1s forwards;
+        animation-delay: 0.5s;
+        opacity: 0;
+    }
+    
+    .section h2 {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--secondary-color);
+        position: relative;
+    }
+    
+    .section h2::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--accent-color);
+    }
+    
+    .contact-info p {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .contact-info i {
+        margin-right: 10px;
+        color: var(--primary-color);
+    }
+    
+    .skill-item {
+        margin-bottom: 15px;
+    }
+    
+    .skill-name {
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    
+    .skill-bar {
+        height: 8px;
+        background-color: #eee;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .skill-progress {
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        border-radius: 4px;
+        width: 0;
+        transition: width 1.5s ease-out;
+    }
+    
+    .experience-item {
+        margin-bottom: 20px;
+        padding-left: 20px;
+        border-left: 3px solid var(--primary-color);
+        transition: transform 0.3s ease;
+    }
+    
+    .experience-item:hover {
+        transform: translateX(10px);
+    }
+    
+    .experience-date {
+        color: var(--accent-color);
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    
+    .experience-title {
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    
+    .experience-description {
+        color: #666;
+    }
+    
+    ul {
+        padding-left: 20px;
+    }
+    
+    li {
+        margin-bottom: 8px;
+        position: relative;
+    }
+    
+    li::before {
+        content: '•';
+        color: var(--primary-color);
+        font-weight: bold;
+        position: absolute;
+        left: -15px;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .cv-sidebar, .cv-main {
+            width: 100%;
+        }
+        
+        .cv-sidebar {
+            border-right: none;
+            border-bottom: 1px solid #eee;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <div class="cv-container">
+        <div class="profile-image-container">
+            <img src="{{ asset('images/photo.png') }}" alt="Ma photo de profil" class="profile-image">
+        </div>
+        
+        <div class="cv-card">
+            <div class="cv-header">
+                <h1>Zakri Yassine</h1>
+                <p>Étudiant en BUT Réseaux et Télécommunications</p>
+            </div>
+            
+            <div class="cv-content">
+                <div class="cv-sidebar">
+                    <div class="section">
+                        <h2>Contact</h2>
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> zakryassin06@gmail.com</p>
+                            <p><i class="fas fa-phone"></i> +33 851727234</p>
+                            <p><i class="fas fa-map-marker-alt"></i> France</p>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2>Langues</h2>
+                        <div class="skill-item">
+                            <div class="skill-name">Arabe</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Français</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Anglais</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2>Formation</h2>
+                        <div class="experience-item">
+                            <div class="experience-date">2024-2027</div>
+                            <div class="experience-title">BUT Réseaux et Télécommunications</div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-date">2023-2024</div>
+                            <div class="experience-title">Baccalauréat en Sciences Physiques et Chimie</div>
+                            <div class="experience-description">Mention Bien</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-main">
+                    <div class="section">
+                        <h2>Expérience</h2>
+                        <div class="experience-item">
+                            <div class="experience-date">2023-2024</div>
+                            <div class="experience-title">Bénévolat dans une association sociale</div>
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Participation à donner des idées pour développer des transactions</li>
+                                    <li>Support des personnes handicapées</li>
+                                    <li>Lutte contre la drogue</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-title">Membre dans une équipe de création web</div>
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Création de sites web</li>
+                                    <li>Gestion des comptes réseaux sociaux</li>
+                                    <li>Création de designs et logos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2>Compétences</h2>
+                        <div class="skill-item">
+                            <div class="skill-name">Logiciels Office</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Adobe Photoshop</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Visual Studio</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Packet Tracer</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Wireshark</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2>Activités Extra-professionnelles</h2>
+                        <div class="experience-item">
+                            <div class="experience-title">Joueur dans une équipe de football</div>
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Développement psychique et physique</li>
+                                    <li>Ambition de gagner</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                bar.style.width = bar.style.width;
+            });
+        });
+    </script>
+{% endblock %} 

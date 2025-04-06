@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ ac_code }} - {{ ac_title }}{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center mb-4">{{ ac_code }}</h1>
+            <h2 class="text-center mb-5">{{ ac_title }}</h2>
+            
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Preuves</h3>
+                </div>
+                <div class="card-body">
+                    <div class="preuves-content">
+                        {{ preuves_content|raw }}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Analyses Réflexives</h3>
+                </div>
+                <div class="card-body">
+                    <div class="analyses-content">
+                        {{ analyses_content|raw }}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="{{ path('app_rt' ~ rt_number) }}" class="btn btn-secondary">Retour à RT{{ rt_number }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

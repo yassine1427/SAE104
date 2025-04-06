@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RT1 - Administrer les réseaux et l'Internet{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-5">RT1 - Administrer les réseaux et l'Internet</h1>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC11.01</h5>
+                    <p class="card-text">Maîtriser les lois fondamentales de l'électricité afin d'intervenir sur des équipements de réseaux et télécommunications</p>
+                    <a href="{{ path('app_ac11', {'number': '01'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC11.02</h5>
+                    <p class="card-text">Comprendre l'architecture et les fondamentaux des systèmes numériques, les principes du codage de l'information, des communications et de l'Internet</p>
+                    <a href="{{ path('app_ac11', {'number': '02'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC11.03</h5>
+                    <p class="card-text">Configurer les fonctions de base du réseau local</p>
+                    <a href="{{ path('app_ac11', {'number': '03'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC11.04</h5>
+                    <p class="card-text">Maîtriser les rôles et les principes fondamentaux des systèmes d'exploitation afin d'interagir avec ceux-ci pour la configuration et l'administration des réseaux et services fournis</p>
+                    <a href="{{ path('app_ac11', {'number': '04'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC11.05</h5>
+                    <p class="card-text">Savoir identifier les dysfonctionnements du réseau local</p>
+                    <a href="{{ path('app_ac11', {'number': '05'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AC11.06</h5>
+                    <p class="card-text">Installer un poste client, expliquer la procédure mise en place</p>
+                    <a href="{{ path('app_ac11', {'number': '06'}) }}" class="btn btn-primary">Voir les détails</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Yassine Zakri{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <div class="mb-4 fade-in" data-animation-delay="0">
+                <img src="{{ asset('Pics/photo.png') }}" class="img-fluid rounded-circle img-profile" style="max-width: 250px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </div>
+            <h1 class="display-4 mb-4 fade-in" data-animation-delay="0.2">Bienvenue sur mon portfolio</h1>
+            <p class="lead mb-5 fade-in" data-animation-delay="0.4">Je suis Yassine Zakri, étudiant en Réseaux et Télécommunications</p>
+            
+            <div class="card mb-4 fade-in" data-animation-delay="0.6">
+                <div class="card-body">
+                    <h2 class="card-title section-title">À propos de moi</h2>
+                    <p class="card-text">
+                        Je suis passionné par les réseaux et les télécommunications. Mon parcours académique m'a permis d'acquérir des compétences variées dans ce domaine.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <div class="card h-100 slide-in-left" data-animation-delay="0.8">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Mon CV</h3>
+                            <p class="card-text">Découvrez mon parcours professionnel et académique</p>
+                            <a href="{{ path('app_cv') }}" class="btn btn-primary">Voir mon CV</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 fade-in" data-animation-delay="1">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Mes Loisirs</h3>
+                            <p class="card-text">Explorez mes centres d'intérêt et passions</p>
+                            <a href="{{ path('app_loisirs') }}" class="btn btn-primary">Voir mes loisirs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 slide-in-right" data-animation-delay="1.2">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Mon ePortfolio</h3>
+                            <p class="card-text">Découvrez mes compétences et apprentissages critiques</p>
+                            <a href="{{ path('app_eportfolio') }}" class="btn btn-primary">Voir mon ePortfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card fade-in" data-animation-delay="1.4">
+                <div class="card-body">
+                    <h2 class="card-title section-title">Contact</h2>
+                    <div class="contact-info">
+                        <p class="card-text">
+                            <strong><i class="fas fa-envelope me-2"></i>Email:</strong> zakryassin06@gmail.com
+                        </p>
+                        <p class="card-text">
+                            <strong><i class="fas fa-users me-2"></i>Groupe:</strong> B2
+                        </p>
+                    </div>
+                    <p class="card-text mt-3">
+                        N'hésitez pas à me contacter pour toute question ou opportunité de collaboration.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

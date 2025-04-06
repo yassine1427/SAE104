@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Eportfolio - Compétences{% endblock %}
 
 {% block stylesheets %}
     {{ parent() }} {# Conserve les styles existants #}
@@ -29,48 +29,36 @@
 
 {% block body %}
 <div class="container mt-5">
-    <div class="row">
-        <div class="col text-center">
-            <h1>Présentation of me</h1>
-            
-            <!-- Cadre beige pour le texte -->
-            <div class="beige-box">
-
-                
-                <div class="contact-info" style="color: black;">
-                    <h2>About me</h2>
-                    <p><strong>Surname :</strong> Zakri </p>
-                    <p><strong>Name :</strong> Yassine </p>
-                    <p><strong>Email:</strong> zakryassin06@gmail.com</p>
-                    <p><strong>Group:</strong> B2</p>
+    <h1 class="text-center mb-5">Mes Compétences R&T</h1>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">RT1</h5>
+                    <p class="card-text">Administrer les réseaux et l'Internet</p>
+                    <a href="{{ path('app_rt1') }}" class="btn btn-primary">Voir les apprentissages critiques</a>
                 </div>
-                
-                <!-- Boutons pour CV et ePortfolio -->
-                <p><strong>You can find my CV and ePortfolio below.</strong></p>
-                <a href="/cv" class="btn btn-primary m-2">My CV</a>
+            </div>
+        </div>
         
-            <a href="https://docs.google.com/spreadsheets/d/1Gmy9IGic6E4hKChvnYv4qinJaP3j2sP6T8_4bC7CeMo/edit?usp=sharing" class="btn btn-primary" target="_blank">my eportfolio</a>
-                <p><strong>If you are interested in my profile, please feel free to fill out the form below.</strong></p>
-
-                <!-- Formulaire -->
-                <form id="contactForm" action="/submit-form" method="POST">
-                    <div class="form-group">
-                        <label for="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="firstName" class="form-control" required>
-                        <div id="firstNameError" class="error-message"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="lastName" class="form-control" required>
-                        <div id="lastNameError" class="error-message"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                        <div id="emailError" class="error-message"></div>
-                    </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </form>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">RT2</h5>
+                    <p class="card-text">Connecter les entreprises et les usagers</p>
+                    <a href="{{ path('app_rt2') }}" class="btn btn-primary">Voir les apprentissages critiques</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">RT3</h5>
+                    <p class="card-text">Créer des outils et des applications informatiques pour les R&T</p>
+                    <a href="{{ path('app_rt3') }}" class="btn btn-primary">Voir les apprentissages critiques</a>
+                </div>
             </div>
         </div>
     </div>

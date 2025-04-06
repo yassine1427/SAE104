@@ -1,0 +1,224 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon CV - Yassine Zakri{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <!-- En-tête du CV -->
+    <div class="card mb-4 fade-in" data-animation-delay="0">
+        <div class="card-body bg-primary text-white rounded-top">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center">
+                    <img src="{{ asset('Pics/photo.png') }}" alt="Photo de Yassine Zakri" class="img-fluid rounded-circle img-profile" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid white;">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="display-4 mb-0">Yassine ZAKRI</h1>
+                    <p class="lead">Alternance en administrations des systèmes et réseaux informatique</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope me-2"></i> zakryyassine@outlook.fr</p>
+                        <p><i class="fas fa-phone me-2"></i> 06.51.72.72.34</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 53 Boulevard de Belgique, Roanne (42300)</p>
+                        <p><i class="fas fa-car me-2"></i> Permis B</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Colonne gauche -->
+        <div class="col-md-8">
+            <!-- Présentation -->
+            <div class="card mb-4 slide-in-left" data-animation-delay="0.2">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="fas fa-user me-2"></i>Présentation</h2>
+                </div>
+                <div class="card-body">
+                    <p class="skill-item">Étudiant passionné par les réseaux informatiques et la cybersécurité, avec une solide formation académique, je suis à la recherche d'une alternance en administration des systèmes, réseaux et sécurité.</p>
+                </div>
+            </div>
+
+            <!-- Formation -->
+            <div class="card mb-4 slide-in-left" data-animation-delay="0.4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>Diplômes et Formations</h2>
+                </div>
+                <div class="card-body">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>BUT Réseaux et Télécommunication</h4>
+                            <p class="text-muted">Depuis 2024 | IUT Roanne</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Baccalauréat SC Physique Chimie</h4>
+                            <p class="text-muted">De 2023 à 2024 | Lycée 6 Novembre, Maroc</p>
+                            <p>Mention Bien</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projets académiques -->
+            <div class="card mb-4 slide-in-left" data-animation-delay="0.6">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="fas fa-project-diagram me-2"></i>Projets académiques</h2>
+                </div>
+                <div class="card-body">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Projets IUT</h4>
+                            <p class="text-muted">Depuis 2024 | IUT Roanne</p>
+                            <ul class="skill-list">
+                                <li class="skill-item">Création d'un réseau LAN</li>
+                                <li class="skill-item">Création d'un portfolio avec symfony</li>
+                                <li class="skill-item">Configurer des switch et des routeurs</li>
+                                <li class="skill-item">Réaliser un plan de montage</li>
+                                <li class="skill-item">Segmenter et router dans les réseaux locaux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expériences professionnelles -->
+            <div class="card mb-4 slide-in-left" data-animation-delay="0.8">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="fas fa-briefcase me-2"></i>Expériences professionnelles</h2>
+                </div>
+                <div class="card-body">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Bénévolat dans une association</h4>
+                            <p class="text-muted">De 2022 à 2024 | Association de paix, Al Jadida, Morocco</p>
+                            <ul class="skill-list">
+                                <li class="skill-item">Animation</li>
+                                <li class="skill-item">Participer à donner des idée pour développer l'association</li>
+                                <li class="skill-item">Supporter les handicap</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colonne droite -->
+        <div class="col-md-4">
+            <!-- Langues -->
+            <div class="card mb-4 slide-in-right" data-animation-delay="0.2">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="fas fa-language me-2"></i>Langues</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="skill-item">
+                            <div class="d-flex justify-content-between">
+                                <span>Arabe</span>
+                                <span>langue maternelle</span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="d-flex justify-content-between">
+                                <span>Français</span>
+                                <span>niveau C1</span>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="d-flex justify-content-between">
+                                <span>Anglais</span>
+                                <span>niveau B2</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Compétences Informatiques -->
+            <div class="card mb-4 slide-in-right" data-animation-delay="0.4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="fas fa-laptop-code me-2"></i>Informatique</h2>
+                </div>
+                <div class="card-body">
+                    <h5 class="section-title">Langages de programmation</h5>
+                    <ul class="list-unstyled">
+                        <li class="skill-item">Python</li>
+                        <li class="skill-item">Html</li>
+                        <li class="skill-item">Css</li>
+                        <li class="skill-item">PhP</li>
+                    </ul>
+
+                    <h5 class="section-title">Systèmes d'exploitation</h5>
+                    <ul class="list-unstyled">
+                        <li class="skill-item">Linux (Ubuntu, Debian, Kali)</li>
+                        <li class="skill-item">Windows</li>
+                        <li class="skill-item">Mac</li>
+                    </ul>
+
+                    <h5 class="section-title">Virtualisation</h5>
+                    <ul class="list-unstyled">
+                        <li class="skill-item">vSphere</li>
+                        <li class="skill-item">VMware</li>
+                        <li class="skill-item">VirtualBox</li>
+                    </ul>
+
+                    <h5 class="section-title">Réseaux</h5>
+                    <ul class="list-unstyled">
+                        <li class="skill-item">Putty</li>
+                        <li class="skill-item">Wireshark</li>
+                        <li class="skill-item">Cisco Packet Tracer</li>
+                    </ul>
+
+                    <h5 class="section-title">Autres</h5>
+                    <ul class="list-unstyled">
+                        <li class="skill-item">Pack office</li>
+                        <li class="skill-item">Photoshop</li>
+                        <li class="skill-item">Visual studio</li>
+                        <li class="skill-item">Symfony</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Centres d'intérêt -->
+            <div class="card mb-4 slide-in-right" data-animation-delay="0.6">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0"><i class="fas fa-heart me-2"></i>Centres d'intérêt</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="skill-item">Natation</li>
+                        <li class="skill-item">Camping</li>
+                        <li class="skill-item">Football</li>
+                        <li class="skill-item">Paddle</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.skill-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-list .skill-item {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.skill-list .skill-item::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #007bff;
+}
+</style>
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{% endblock %} 
