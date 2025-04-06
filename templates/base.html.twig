@@ -186,24 +186,48 @@
     <body class="bg-white">
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
-            <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>UJM Logo</title> <style> .logo { font-family: 'Arial', sans-serif; font-size: 48px; font-weight: bold; color:rgb(0, 0, 0); /* Blue color */ } </style> </head> <body> <div class="logo">UJM </div> </body>
+            <a href="{{ path('app_home') }}" class="navbar-brand" style="
+                font-family: 'Arial', sans-serif; 
+                font-size: 45px;
+                font-weight: bold; 
+                color: white;
+                background-color: black;
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                margin: 8px;
+                ">
+                YZ
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ path('app_home') }}">Home
-                            <span class="visually-hidden">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
+            <div class="collapse navbar-collapse flex-column align-items-center" id="navbarColor01">
+                <!-- Bouton Home au-dessus -->
+                <div class="mb-3" style="background-color: rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 10px;">
+                    <a class="nav-link active" href="{{ path('app_home') }}" style="
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: white;
+                        text-transform: uppercase;
+                        ">
+                        Home
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </div>
+                <!-- Autres boutons en dessous -->
+                <ul class="navbar-nav" style="font-size: 14px;"> <!-- Taille réduite de 50% -->
+                    <li class="nav-item mx-2">
                         <a href="{{ path('app_loisirs') }}" class="btn btn-primary">My hobies</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a href="{{ path('app_cv') }}" class="btn btn-primary">My cv</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a href="{{ path('app_eportfolio') }}" class="btn btn-primary">My eportfolio</a>
                     </li>
                 </ul>
