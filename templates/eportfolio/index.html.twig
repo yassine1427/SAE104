@@ -24,11 +24,38 @@
             color: red;
             font-size: 0.9em;
         }
+        .spreadsheet-btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            background: linear-gradient(45deg, #4285f4, #34a853);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .spreadsheet-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+        .spreadsheet-btn i {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
     </style>
 {% endblock %}
 
 {% block body %}
 <div class="container mt-5">
+    <a href="https://docs.google.com/spreadsheets/d/1Gmy9IGic6E4hKChvnYv4qinJaP3j2sP6T8_4bC7CeMo/edit?usp=sharing" target="_blank" class="spreadsheet-btn">
+        <i class="fas fa-table"></i>
+        Tableau de Compétences
+    </a>
+
     <h1 class="text-center mb-5">Mes Compétences R&T</h1>
     
     <div class="row justify-content-center">
