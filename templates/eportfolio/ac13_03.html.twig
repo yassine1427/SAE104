@@ -1,0 +1,158 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AC13.03 - Traduire un algorithme dans un langage de programmation{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .code-block {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow-x: auto;
+        }
+        .code-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            font-family: 'Consolas', monospace;
+        }
+        .proof-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">AC13.03 - Traduire un algorithme dans un langage de programmation</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Preuves</h2>
+        </div>
+        <div class="card-body">
+            <div class="proof-section">
+                <h3>1. Utilisation d'outils logiciels</h3>
+                <p>Preuve : J'ai utilisé des outils logiciels pour effectuer des tâches spécifiques, comme la gestion de projets, la programmation ou la maintenance système.</p>
+                <p><strong>Exemple concret :</strong></p>
+                <ul>
+                    <li>J'ai utilisé Microsoft Office (Word, Excel, PowerPoint) pour créer des documents, des tableaux et des présentations.</li>
+                    <li>J'ai utilisé des environnements de développement intégrés (IDE) comme Visual Studio Code, spyder et symfony pour écrire et déboguer du code.</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <div class="code-title">Traitement d'un fichier de format FASTA</div>
+                <pre>
+import re
+
+# Ouvrir le fichier FASTA en lecture
+with open("Proteome.fasta", "r", encoding="utf-8") as file:
+    lignes = file.readlines()
+
+# Initialisation du compteur
+compteur = 1
+
+# Parcourir les lignes pour extraire les numéros d'accession
+for ligne in lignes:
+    if ligne.startswith(">"):
+        # Expression régulière pour extraire le numéro d'accession
+        match = re.search(r">sp\|?(\w+)", ligne)
+        if match:
+            accession = match.group(1)
+            print(f"Proteine {compteur:05d} {accession}")
+            compteur += 1</pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-title">Correction des espaces dans un fichier texte</div>
+                <pre>
+import re
+
+# Lire le fichier texte avec les espaces incorrects
+with open(r"C:\Users\HP\Desktop\texte.txt", "r", encoding="utf-8") as file:
+    texte = file.read()
+
+# Remplacer plusieurs espaces par un seul
+texte_corrige = re.sub(r"\s+", " ", texte)
+
+# Enregistrer le texte corrigé dans un nouveau fichier
+with open(r"C:\Users\HP\Desktop\textecorrige.txt", "w", encoding="utf-8") as file:
+    file.write(texte_corrige)
+
+print("Correction terminée : fichier textecorrige.txt enregistré.")</pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-title">Suppression des doublons dans un fichier texte</div>
+                <pre>
+import re
+
+# Lire le fichier contenant les doublons
+with open("doublons.txt", "r", encoding="utf-8") as file:
+    texte = file.read()
+
+# Expression régulière pour supprimer les doublons consécutifs
+texte_corrige = re.sub(r"\b(\w+)\s+\1\b", r"\1", texte, flags=re.IGNORECASE)
+
+# Afficher le texte corrigé
+print("Texte corrigé :\n")
+print(texte_corrige)</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Analyse réflexive</h2>
+        </div>
+        <div class="card-body">
+            <h3>Introduction</h3>
+            <p>La compétence AC13.03, qui consiste à traduire un algorithme dans un langage de programmation spécifique et pour un environnement donné, est essentielle pour tout développeur ou technicien en informatique. Au début de mon apprentissage, j'ai rencontré des difficultés à comprendre comment transformer un algorithme en code fonctionnel, mais grâce à une démarche structurée et à une pratique régulière, j'ai réussi à développer cette compétence de manière significative. Cette analyse réflexive retrace mon parcours, mes défis, et les stratégies qui m'ont permis de progresser.</p>
+
+            <h3>État initial : Difficultés et lacunes</h3>
+            <p>Au début de ma formation, j'ai identifié plusieurs lacunes :</p>
+            <ul>
+                <li>Manque de compréhension des algorithmes : J'avais du mal à comprendre comment les algorithmes fonctionnaient et comment les appliquer à des problèmes concrets.</li>
+                <li>Problèmes de traduction en code : Je ne savais pas comment traduire efficacement un algorithme dans un langage de programmation spécifique (comme Python, C ou Java).</li>
+                <li>Difficultés d'adaptation à l'environnement : J'avais du mal à tenir compte des spécificités de l'environnement (système d'exploitation, bibliothèques, contraintes matérielles) lors de la traduction.</li>
+            </ul>
+            <p>Ces difficultés m'ont poussé à renforcer mes bases théoriques et à acquérir une expérience pratique.</p>
+
+            <h3>Démarche de progression</h3>
+            <p>Pour surmonter ces obstacles, j'ai adopté plusieurs stratégies :</p>
+            <ul>
+                <li>Renforcement des bases théoriques : J'ai utilisé des ressources variées (cours en ligne, manuels, vidéos) pour comprendre les concepts de base des algorithmes et des langages de programmation.</li>
+                <li>Pratique régulière : J'ai participé à des exercices pratiques pour traduire des algorithmes en code dans différents langages et environnements.</li>
+                <li>Apprentissage par l'erreur : Mes erreurs (mauvaises traductions, incompatibilités avec l'environnement) m'ont permis de mieux comprendre les principes sous-jacents.</li>
+                <li>Collaboration et mentorat : Travailler avec des collègues expérimentés m'a aidé à corriger mes erreurs et à gagner en confiance.</li>
+                <li>Utilisation d'outils de développement : J'ai appris à utiliser des environnements de développement intégrés (IDE) et des simulateurs pour tester et valider mes traductions d'algorithmes.</li>
+            </ul>
+
+            <h3>Résultats et développement de la compétence</h3>
+            <p>Mes efforts ont porté leurs fruits :</p>
+            <ul>
+                <li>Compréhension approfondie des algorithmes : Je comprends désormais comment les algorithmes fonctionnent et comment les appliquer à des problèmes concrets.</li>
+                <li>Traduction efficace en code : Je traduis des algorithmes dans des langages de programmation spécifiques (comme Python, C ou Java) avec précision et efficacité.</li>
+                <li>Adaptation à l'environnement : Je tiens compte des spécificités de l'environnement (système d'exploitation, bibliothèques, contraintes matérielles) lors de la traduction.</li>
+                <li>Autonomie : Je peux traduire des algorithmes en code en toute autonomie, en adaptant ma démarche aux besoins spécifiques.</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>Mon parcours dans l'acquisition de la compétence AC13.03 a été exigeant mais enrichissant. En combinant théorie, pratique, collaboration et apprentissage par l'erreur, j'ai développé une maîtrise solide de la traduction d'algorithmes en code pour des environnements spécifiques. Cette compétence est désormais un atout clé pour intervenir efficacement dans des projets de développement logiciel, tout en garantissant qualité et fiabilité. Je reste motivé à continuer d'apprendre et à m'adapter aux évolutions technologiques pour exceller dans ce domaine.</p>
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AC11.03 - Configurer les fonctions de base du réseau local{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">AC11.03 - Configurer les fonctions de base du réseau local</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Preuves</h2>
+        </div>
+        <div class="card-body">
+            <div class="mb-4">
+                <h3>1. Configuration d'adresses IP et de sous-réseaux</h3>
+                <p><strong>Preuve :</strong> On a configuré des adresses IP statiques et dynamiques (via DHCP) sur des postes clients et des équipements réseau.</p>
+                <h4>Exemple concret :</h4>
+                <ul>
+                    <li>On a configuré un serveur DHCP pour attribuer automatiquement des adresses IP aux postes clients d'un réseau local.</li>
+                    <li>On a configuré des adresses IP statiques pour des équipements en respectant le plan d'adressage du réseau.</li>
+                </ul>
+                <img src="/Pics/photo8.png" alt="Configuration IP" class="img-fluid mb-3">
+            </div>
+
+            <div class="mb-4">
+                <h3>2. Configuration de commutateurs (switches)</h3>
+                <p><strong>Preuve :</strong> On a configuré des commutateurs pour assurer la connectivité et la segmentation du réseau local.</p>
+                <h4>Exemple concret :</h4>
+                <ul>
+                    <li>On a configuré des VLAN sur un commutateur pour segmenter le réseau local en plusieurs sous-réseaux logiques.</li>
+                    <li>Configuration d'une connexion à distance en utilisant SSH.</li>
+                </ul>
+                <img src="/Pics/photo9.png" alt="Configuration Switch" class="img-fluid mb-3">
+            </div>
+
+            <div class="mb-4">
+                <h3>Analyse de la trame ICMP</h3>
+                <p>On a utilisé ici le protocole ICMP pour avoir un affichage des adresses ip de source et de destination, car ICMP est conçu pour transmettre des messages d'erreur liés aux problèmes de transmission de paquets.</p>
+                <img src="/Pics/photo10.png" alt="Analyse ICMP" class="img-fluid mb-3">
+                <img src="/Pics/photo11.png" alt="Analyse ICMP" class="img-fluid mb-3">
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Analyse réflexive</h2>
+        </div>
+        <div class="card-body">
+            <h3>État initial : Difficultés et lacunes</h3>
+            <p>Au début de ma formation, j'ai identifié plusieurs lacunes :</p>
+            <ul>
+                <li>Concepts de base : Les notions d'adresses IP, de masques de sous-réseau, de passerelles par défaut et de protocoles (DHCP, DNS) me semblaient confuses.</li>
+                <li>Manipulation des équipements : Je ne savais pas configurer un routeur ou un commutateur, ni utiliser des outils de diagnostic comme ping ou ipconfig.</li>
+                <li>Problèmes de mise en pratique : J'avais du mal à configurer un réseau local simple et à résoudre les problèmes de connectivité.</li>
+            </ul>
+            <p>Ces difficultés m'ont poussé à renforcer mes bases théoriques et à acquérir une expérience pratique.</p>
+
+            <h3>Démarche de progression</h3>
+            <p>Pour surmonter ces obstacles, j'ai adopté plusieurs stratégies :</p>
+            <ul>
+                <li>Renforcement des bases théoriques : J'ai utilisé des ressources variées (cours en ligne, manuels, vidéos) et schématisé les réseaux pour mieux visualiser leur fonctionnement.</li>
+                <li>Pratique régulière : J'ai participé à des travaux pratiques pour configurer des adresses IP, activer le DHCP et diagnostiquer des problèmes de connectivité.</li>
+                <li>Apprentissage par l'erreur : Mes erreurs (adresses IP incorrectes, oubli de passerelle par défaut) m'ont permis de mieux comprendre les principes.</li>
+                <li>Collaboration et mentorat : Travailler avec des collègues expérimentés m'a aidé à corriger mes erreurs et à gagner en confiance.</li>
+                <li>Outils modernes : J'ai utilisé des logiciels de simulation réseau (Packet Tracer) pour tester des configurations virtuelles avant leur implémentation réelle.</li>
+            </ul>
+
+            <h3>Résultats et développement de la compétence</h3>
+            <p>Mes efforts ont porté leurs fruits :</p>
+            <ul>
+                <li>Compréhension approfondie : Les concepts de configuration des réseaux locaux sont devenus des outils naturels pour résoudre des problèmes techniques.</li>
+                <li>Confiance en pratique : Je configure désormais des réseaux locaux en autonomie, en respectant les bonnes pratiques (segmentation en sous-réseaux, sécurisation des accès).</li>
+                <li>Diagnostic efficace : J'identifie rapidement les causes des dysfonctionnements (adresses IP mal configurées, câbles défectueux) et propose des solutions adaptées.</li>
+                <li>Maîtrise des outils : J'utilise des outils de diagnostic (ping, ipconfig, tracert) et des logiciels de simulation avec aisance.</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>Mon parcours dans l'acquisition de la compétence AC11.03 a été exigeant mais enrichissant. En combinant théorie, pratique, collaboration et apprentissage par l'erreur, j'ai développé une maîtrise solide de la configuration des réseaux locaux. Cette compétence est désormais un atout clé pour intervenir efficacement sur des réseaux, en garantissant qualité et sécurité. Je reste motivé à continuer d'apprendre et à m'adapter aux évolutions technologiques pour exceller dans ce domaine.</p>
+        </div>
+    </div>
+</div>
+{% endblock %} 

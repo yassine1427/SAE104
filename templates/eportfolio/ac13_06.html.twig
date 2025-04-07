@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AC13.06 - S'intégrer dans un environnement propice au développement et au travail collaboratif{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .proof-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .image-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .analysis-point {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 3px solid #3498db;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">AC13.06 - S'intégrer dans un environnement propice au développement et au travail collaboratif</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Preuves</h2>
+        </div>
+        <div class="card-body">
+            <div class="proof-section">
+                <p>J'ai réalisé pendant la SAE103 un travail collaboratif en binôme où moi et mon collègue on peut modifier à la fois les diaporama:</p>
+                
+                <div class="image-container">
+                    <img src="{{ asset('Pics/photo25.png') }}" alt="Travail collaboratif sur les diaporamas" class="img-fluid">
+                </div>
+
+                <p>L'utilisation de github est aussi nécessaire pour un travail collaboratif pour la réalisation d'un programmes et chacun peut modifier et mettre à jour son travail:</p>
+
+                <div class="image-container">
+                    <img src="{{ asset('Pics/photo26.png') }}" alt="Collaboration sur GitHub" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Analyse réflexive</h2>
+        </div>
+        <div class="card-body">
+            <h3 class="section-title">Introduction</h3>
+            <p>La compétence AC13.06, qui consiste à s'intégrer dans un environnement propice au développement et au travail collaboratif, est essentielle pour tout développeur ou technicien en informatique. Au début de mon apprentissage, j'ai rencontré des difficultés à m'adapter à un environnement de travail collaboratif et à utiliser les outils de développement en équipe, mais grâce à une démarche structurée et à une pratique régulière, j'ai réussi à développer cette compétence de manière significative. Cette analyse réflexive retrace mon parcours, mes défis, et les stratégies qui m'ont permis de progresser.</p>
+
+            <h3 class="section-title">État initial : Difficultés et lacunes</h3>
+            <p>Au début de ma formation, j'ai identifié plusieurs lacunes :</p>
+            <ul>
+                <li>Manque de familiarité avec les outils collaboratifs : J'avais du mal à utiliser des outils comme Git, GitHub, ou des plateformes de gestion de projet (Trello, Jira).</li>
+                <li>Problèmes de communication en équipe : Je ne savais pas comment contribuer efficacement à des projets collaboratifs et partager mes idées avec les autres membres de l'équipe.</li>
+                <li>Difficultés à s'adapter aux méthodologies de travail : J'avais du mal à comprendre et à appliquer des méthodologies comme Agile ou Scrum.</li>
+            </ul>
+
+            <h3 class="section-title">Démarche de progression</h3>
+            <p>Pour surmonter ces obstacles, j'ai adopté plusieurs stratégies :</p>
+            <ul>
+                <li>Renforcement des bases théoriques : J'ai utilisé des ressources variées (cours en ligne, manuels, vidéos) pour comprendre les concepts de base du travail collaboratif et des outils de développement.</li>
+                <li>Pratique régulière : J'ai participé à des projets collaboratifs pour utiliser des outils comme Git, GitHub, et des plateformes de gestion de projet.</li>
+                <li>Apprentissage par l'erreur : Mes erreurs (mauvaises utilisations des outils, problèmes de communication) m'ont permis de mieux comprendre les principes sous-jacents.</li>
+                <li>Collaboration et mentorat : Travailler avec des collègues expérimentés m'a aidé à corriger mes erreurs et à gagner en confiance.</li>
+                <li>Utilisation de méthodologies de travail : J'ai appris à appliquer des méthodologies comme Agile ou Scrum pour structurer mon travail en équipe.</li>
+            </ul>
+
+            <h3 class="section-title">Résultats et développement de la compétence</h3>
+            <p>Mes efforts ont porté leurs fruits :</p>
+            <ul>
+                <li>Maîtrise des outils collaboratifs : Je suis désormais à l'aise avec des outils comme Git, GitHub, et des plateformes de gestion de projet.</li>
+                <li>Communication efficace en équipe : Je contribue activement aux projets collaboratifs et partage mes idées de manière claire et constructive.</li>
+                <li>Adaptation aux méthodologies de travail : Je comprends et applique des méthodologies comme Agile ou Scrum pour structurer mon travail en équipe.</li>
+                <li>Autonomie : Je peux m'intégrer dans un environnement de travail collaboratif en toute autonomie, en adaptant ma démarche aux besoins spécifiques.</li>
+            </ul>
+
+            <h3 class="section-title">Conclusion</h3>
+            <p>Mon parcours dans l'acquisition de la compétence AC13.06 a été exigeant mais enrichissant. En combinant théorie, pratique, collaboration et apprentissage par l'erreur, j'ai développé une maîtrise solide de l'intégration dans un environnement propice au développement et au travail collaboratif. Cette compétence est désormais un atout clé pour intervenir efficacement dans des projets d'équipe, tout en garantissant qualité et fiabilité. Je reste motivé à continuer d'apprendre et à m'adapter aux évolutions technologiques pour exceller dans ce domaine.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -50,6 +50,23 @@
                     box-shadow: 0 5px 15px rgba(0,123,255,0.4);
                 }
 
+                .btn-cv {
+                    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+                    border: none;
+                    border-radius: 25px;
+                    padding: 0.5rem 1.5rem;
+                    transition: transform 0.2s ease, box-shadow 0.2s ease;
+                    color: white;
+                    text-decoration: none;
+                    margin-left: 1rem;
+                }
+
+                .btn-cv:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+                    color: white;
+                }
+
                 .timeline-item {
                     position: relative;
                     padding-left: 20px;
@@ -170,11 +187,12 @@
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+            {{ importmap('app') }}
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
-                    // Ajouter les délais d'animation
+                    // Animation delays
                     document.querySelectorAll('[data-animation-delay]').forEach(element => {
                         const delay = element.getAttribute('data-animation-delay');
                         element.style.animationDelay = delay + 's';
@@ -225,7 +243,15 @@
                         <a href="{{ path('app_loisirs') }}" class="btn btn-primary">My hobies</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a href="{{ path('app_cv') }}" class="btn btn-primary">My cv</a>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="cvDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-file-alt"></i> Mon CV
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="cvDropdown">
+                                <li><a class="dropdown-item" href="{{ path('app_cv') }}">Version Web</a></li>
+                                <li><a class="dropdown-item" href="https://yassine1427.github.io/Mon-Cv/" target="_blank">Version En Ligne</a></li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item mx-2">
                         <a href="{{ path('app_eportfolio') }}" class="btn btn-primary">My eportfolio</a>
@@ -234,7 +260,7 @@
             </div>
         </div>
     </nav>
-    
+
     {% block body %}{% endblock %}
     
     <footer class="footer mt-auto py-3" style="background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-top: 1px solid rgba(0, 0, 0, 0.1);">

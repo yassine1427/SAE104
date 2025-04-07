@@ -1,0 +1,248 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AC13.02 - Lire, exécuter, corriger et modifier un programme{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .code-block {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow-x: auto;
+        }
+        .code-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            font-family: 'Consolas', monospace;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">AC13.02 - Lire, exécuter, corriger et modifier un programme</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Preuves</h2>
+        </div>
+        <div class="card-body">
+            <div class="mb-4">
+                <div class="code-block">
+                    <div class="code-title">Traitement d'un fichier de format FASTA</div>
+                    <pre>
+import re
+
+# Ouvrir le fichier FASTA en lecture
+with open("Proteome.fasta", "r", encoding="utf-8") as file:
+    lignes = file.readlines()
+
+# Initialisation du compteur
+compteur = 1
+
+# Parcourir les lignes pour extraire les numéros d'accession
+for ligne in lignes:
+    if ligne.startswith(">"):
+        # Expression régulière pour extraire le numéro d'accession
+        match = re.search(r">sp\|?(\w+)", ligne)
+        if match:
+            accession = match.group(1)
+            print(f"Proteine {compteur:05d} {accession}")
+            compteur += 1</pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-title">Correction des espaces dans un fichier texte</div>
+                    <pre>
+import re
+
+# Lire le fichier texte avec les espaces incorrects
+with open(r"C:\Users\HP\Desktop\texte.txt", "r", encoding="utf-8") as file:
+    texte = file.read()
+
+# Remplacer plusieurs espaces par un seul
+texte_corrige = re.sub(r"\s+", " ", texte)
+
+# Enregistrer le texte corrigé dans un nouveau fichier
+with open(r"C:\Users\HP\Desktop\textecorrige.txt", "w", encoding="utf-8") as file:
+    file.write(texte_corrige)
+
+print("Correction terminée : fichier textecorrige.txt enregistré.")</pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-title">Suppression des doublons dans un fichier texte</div>
+                    <pre>
+import re
+
+# Lire le fichier contenant les doublons
+with open("doublons.txt", "r", encoding="utf-8") as file:
+    texte = file.read()
+
+# Expression régulière pour supprimer les doublons consécutifs
+texte_corrige = re.sub(r"\b(\w+)\s+\1\b", r"\1", texte, flags=re.IGNORECASE)
+
+# Afficher le texte corrigé
+print("Texte corrigé :\n")
+print(texte_corrige)</pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-title">Recherche d'Expressions régulières</div>
+                    <pre>
+import re
+
+# Définition de la regex
+regex = r"^(a|aba)+aa$"
+
+# Liste des mots à tester
+mots_valides = ["aa", "abaa", "ababababaa"]
+mots_invalides = ["abababa", "aabbaa", "aba", "abababba"]
+
+# Test des mots
+for mot in mots_valides + mots_invalides:
+    if re.fullmatch(regex, mot):
+        print(f"✅ {mot} est valide")
+    else:
+        print(f"❌ {mot} est invalide")</pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-title">Analyse statistique d'un Fichier texte</div>
+                    <pre>
+import re
+from collections import Counter
+
+# Charger le fichier texte
+with open("texte.txt", "r", encoding="utf-8") as file:
+    texte = file.read()
+
+# Compter les paragraphes (séparés par des lignes vides)
+paragraphes = texte.split("\n\n")
+nb_paragraphes = len([p for p in paragraphes if p.strip()])
+
+# Compter les phrases (séparées par ".", "!", "?")
+phrases = re.split(r"[.!?]+", texte)
+nb_phrases = len([p for p in phrases if p.strip()])
+
+# Compter les mots (séparés par espaces et ponctuations)
+mots = re.findall(r"\b\w+\b", texte)
+nb_mots = len(mots)
+
+# Trouver le mot le plus fréquent
+compteur_mots = Counter(mots)
+mot_plus_frequent, occ_max = compteur_mots.most_common(1)[0]
+
+# Afficher les résultats
+print(f"📊 Analyse du fichier texte.txt :")
+print(f"✅ Nombre de paragraphes : {nb_paragraphes}")
+print(f"✅ Nombre de phrases : {nb_phrases}")
+print(f"✅ Nombre de mots : {nb_mots}")
+print(f"✅ Mot le plus fréquent : '{mot_plus_frequent}' ({occ_max} fois)")</pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-title">Traitement de fichier ICS</div>
+                    <pre>
+from icalendar import Calendar
+from collections import defaultdict
+import re
+
+# Charger le fichier ICS
+ics_file = "emploi_du_temps.ics"
+
+with open(ics_file, "r", encoding="utf-8") as file:
+    calendrier = Calendar.from_ical(file.read())
+
+# Structure pour stocker les cours par type
+cours_par_type = defaultdict(list)
+
+# Filtrer les événements du semestre 1 (sept 2024 - janv 2025)
+for event in calendrier.walk("VEVENT"):
+    summary = event.get("SUMMARY")
+    date = event.get("DTSTART").dt
+    location = event.get("LOCATION", "Inconnue")
+    prof = event.get("DESCRIPTION", "Inconnu")
+
+    # Debugging print statements
+    print(f"Processing event: {summary}, Date: {date}, Location: {location}, Prof: {prof}")
+
+    # Vérifier si l'événement est dans le semestre 1
+    if (date.year == 2024 and date.month >= 9) or (date.year == 2025 and date.month <= 1):
+        # Déterminer le type de cours avec regex
+        if re.search(r"\bCM\b", summary, re.IGNORECASE):
+            cours_par_type["CM"].append((date, summary, prof, location))
+        elif re.search(r"\bTD\b", summary, re.IGNORECASE):
+            cours_par_type["TD"].append((date, summary, prof, location))
+        elif re.search(r"\bTP\b", summary, re.IGNORECASE):
+            cours_par_type["TP"].append((date, summary, prof, location))
+        elif re.search(r"\bDS\b", summary, re.IGNORECASE):
+            cours_par_type["DS"].append((date, summary, prof, location))
+        elif re.search(r"\bSAÉ\b", summary, re.IGNORECASE):
+            if "Autonomie" in summary:
+                cours_par_type["SAÉ - Autonomie"].append((date, summary, prof, location))
+            else:
+                cours_par_type["SAÉ - Suivi"].append((date, summary, prof, location))
+
+# Afficher les résultats
+print("📊 Analyse de l'emploi du temps (Semestre 1)")
+for type_cours, cours in cours_par_type.items():
+    print(f"\n🔹 {type_cours} : {len(cours)} séances")
+    for date, summary, prof, location in cours:
+        print(f"   📅 {date} | {summary} | 👨‍🏫 {prof} | 📍 {location}")</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Analyse réflexive</h2>
+        </div>
+        <div class="card-body">
+            <h3>Introduction</h3>
+            <p>La compétence AC13.02, qui consiste à lire, exécuter, corriger et modifier un programme, est essentielle pour tout technicien ou développeur en informatique. Au début de mon apprentissage, j'ai rencontré des difficultés à comprendre et manipuler du code, mais grâce à une démarche structurée et à une pratique régulière, j'ai réussi à développer cette compétence de manière significative. Cette analyse réflexive retrace mon parcours, mes défis, et les stratégies qui m'ont permis de progresser.</p>
+
+            <h3>État initial : Difficultés et lacunes</h3>
+            <p>Au début de ma formation, j'ai identifié plusieurs lacunes :</p>
+            <ul>
+                <li>Manque de compréhension du code : J'avais du mal à lire et interpréter des programmes, surtout dans des langages comme Python, C ou Java.</li>
+                <li>Problèmes de débogage : Je ne savais pas comment identifier et corriger les erreurs dans un programme.</li>
+                <li>Difficultés à modifier du code : J'hésitais à apporter des modifications à un programme existant par crainte de causer des dysfonctionnements.</li>
+            </ul>
+            <p>Ces difficultés m'ont poussé à renforcer mes bases théoriques et à acquérir une expérience pratique.</p>
+
+            <h3>Démarche de progression</h3>
+            <p>Pour surmonter ces obstacles, j'ai adopté plusieurs stratégies :</p>
+            <ul>
+                <li>Renforcement des bases théoriques : J'ai utilisé des ressources variées (cours en ligne, manuels, vidéos) pour comprendre les concepts de base de la programmation (syntaxe, structures de contrôle, fonctions, etc.).</li>
+                <li>Pratique régulière : J'ai participé à des exercices pratiques pour lire, exécuter et modifier des programmes dans différents langages.</li>
+                <li>Apprentissage par l'erreur : Mes erreurs (mauvaises interprétations du code, corrections inefficaces) m'ont permis de mieux comprendre les principes sous-jacents.</li>
+                <li>Collaboration et mentorat : Travailler avec des collègues expérimentés m'a aidé à corriger mes erreurs et à gagner en confiance.</li>
+                <li>Utilisation d'outils de développement : J'ai appris à utiliser des environnements de développement intégrés (IDE) et des outils de débogage pour tester et valider mes modifications.</li>
+            </ul>
+
+            <h3>Résultats et développement de la compétence</h3>
+            <p>Mes efforts ont porté leurs fruits :</p>
+            <ul>
+                <li>Compréhension approfondie du code : Je lis et interprète désormais des programmes avec aisance, même dans des langages complexes.</li>
+                <li>Débogage efficace : Je suis capable d'identifier et de corriger les erreurs dans un programme de manière précise et rapide.</li>
+                <li>Modification de code en confiance : J'apporte des modifications à des programmes existants en respectant les bonnes pratiques et en minimisant les risques de dysfonctionnements.</li>
+                <li>Autonomie : Je peux lire, exécuter, corriger et modifier des programmes en toute autonomie, en adaptant ma démarche aux besoins spécifiques.</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>Mon parcours dans l'acquisition de la compétence AC13.02 a été exigeant mais enrichissant. En combinant théorie, pratique, collaboration et apprentissage par l'erreur, j'ai développé une maîtrise solide de la lecture, de l'exécution, de la correction et de la modification de programmes. Cette compétence est désormais un atout clé pour intervenir efficacement dans des projets de développement logiciel, tout en garantissant qualité et fiabilité. Je reste motivé à continuer d'apprendre et à m'adapter aux évolutions technologiques pour exceller dans ce domaine.</p>
+        </div>
+    </div>
+</div>
+{% endblock %} 
