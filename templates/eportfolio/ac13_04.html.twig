@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AC13.04 - Comprendre l'architecture et les technologies d'un site Web{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .proof-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .github-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #2b3137 0%, #373e47 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .github-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-decoration: none;
+        }
+        .github-btn i {
+            margin-right: 8px;
+        }
+        .tech-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .tech-list li {
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+        }
+        .tech-list li:before {
+            content: "•";
+            color: #007bff;
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -4px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">AC13.04 - Comprendre l'architecture et les technologies d'un site Web</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Preuves</h2>
+        </div>
+        <div class="card-body">
+            <div class="proof-section">
+                <h3>1. Architecture d'un site Web</h3>
+                
+                <div class="mb-4">
+                    <h4 class="text-primary">Front-end</h4>
+                    <ul class="tech-list">
+                        <li>Compréhension des technologies utilisées pour l'interface utilisateur (HTML, CSS, JavaScript)</li>
+                        <li>Organisation des composants en respectant les principes de design responsive</li>
+                        <li>Intégration de bibliothèques comme Bootstrap ou Tailwind pour améliorer l'esthétique et l'ergonomie</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h4 class="text-primary">Back-end</h4>
+                    <ul class="tech-list">
+                        <li>Notions sur les serveurs, bases de données, et APIs REST</li>
+                        <li>Compréhension des frameworks comme Node.js, Django, ou Laravel pour gérer la logique et les requêtes</li>
+                    </ul>
+                </div>
+
+                <div class="text-center">
+                    <a href="https://github.com/yassine1427/R109" target="_blank" class="github-btn">
+                        <i class="fab fa-github"></i>Voir le projet sur GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Analyse réflexive</h2>
+        </div>
+        <div class="card-body">
+            <h3>Introduction</h3>
+            <p>La compétence AC13.04, qui consiste à comprendre l'architecture et les technologies d'un site Web, est essentielle pour tout développeur ou technicien en informatique. Au début de mon apprentissage, j'ai rencontré des difficultés à maîtriser les concepts liés à la création et à la gestion de sites Web, mais grâce à une démarche structurée et à une pratique régulière, j'ai réussi à développer cette compétence de manière significative. Cette analyse réflexive retrace mon parcours, mes défis, et les stratégies qui m'ont permis de progresser.</p>
+
+            <h3>État initial : Difficultés et lacunes</h3>
+            <p>Au début de ma formation, j'ai identifié plusieurs lacunes :</p>
+            <ul>
+                <li>Manque de compréhension de l'architecture Web : J'avais du mal à comprendre comment les différents composants d'un site Web (front-end, back-end, base de données) interagissaient.</li>
+                <li>Problèmes avec les technologies Web : Je ne maîtrisais pas les langages et frameworks couramment utilisés (HTML, CSS, JavaScript, PHP, etc.).</li>
+                <li>Difficultés à concevoir un site Web : J'avais du mal à structurer un projet Web et à choisir les technologies adaptées aux besoins spécifiques.</li>
+            </ul>
+            <p>Ces difficultés m'ont poussé à renforcer mes bases théoriques et à acquérir une expérience pratique.</p>
+
+            <h3>Démarche de progression</h3>
+            <p>Pour surmonter ces obstacles, j'ai adopté plusieurs stratégies :</p>
+            <ul>
+                <li>Renforcement des bases théoriques : J'ai utilisé des ressources variées (cours en ligne, manuels, vidéos) pour comprendre les concepts de base de l'architecture Web et des technologies associées.</li>
+                <li>Pratique régulière : J'ai participé à des projets pratiques pour concevoir et développer des sites Web, en utilisant des langages comme HTML, CSS, JavaScript et des frameworks comme React ou Node.js.</li>
+                <li>Apprentissage par l'erreur : Mes erreurs (mauvaises conceptions, incompatibilités entre technologies) m'ont permis de mieux comprendre les principes sous-jacents.</li>
+                <li>Collaboration et mentorat : Travailler avec des collègues expérimentés m'a aidé à corriger mes erreurs et à gagner en confiance.</li>
+                <li>Utilisation d'outils modernes : J'ai appris à utiliser des outils de développement Web (comme Visual Studio Code, Git) et des plateformes de déploiement (comme GitHub Pages, Heroku).</li>
+            </ul>
+
+            <h3>Résultats et développement de la compétence</h3>
+            <p>Mes efforts ont porté leurs fruits :</p>
+            <ul>
+                <li>Compréhension approfondie de l'architecture Web : Je comprends désormais comment les différents composants d'un site Web interagissent et comment les structurer efficacement.</li>
+                <li>Maîtrise des technologies Web : Je maîtrise les langages et frameworks couramment utilisés (HTML, CSS, JavaScript, PHP, etc.) et sais choisir les technologies adaptées aux besoins spécifiques.</li>
+                <li>Conception de sites Web : Je suis capable de concevoir et développer des sites Web en respectant les bonnes pratiques et en tenant compte des contraintes techniques.</li>
+                <li>Autonomie : Je peux concevoir, développer et déployer des sites Web en toute autonomie, en adaptant ma démarche aux besoins spécifiques.</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>Mon parcours dans l'acquisition de la compétence AC13.04 a été exigeant mais enrichissant. En combinant théorie, pratique, collaboration et apprentissage par l'erreur, j'ai développé une maîtrise solide de l'architecture et des technologies d'un site Web. Cette compétence est désormais un atout clé pour intervenir efficacement dans des projets de développement Web, tout en garantissant qualité et fiabilité. Je reste motivé à continuer d'apprendre et à m'adapter aux évolutions technologiques pour exceller dans ce domaine.</p>
+        </div>
+    </div>
+</div>
+{% endblock %} 

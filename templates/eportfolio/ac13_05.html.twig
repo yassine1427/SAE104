@@ -1,0 +1,191 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AC13.05 - Comprendre l'architecture et les technologies des applications web{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .code-block {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow-x: auto;
+        }
+        .code-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            font-family: 'Consolas', monospace;
+        }
+        .proof-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .github-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #24292e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+        .github-button:hover {
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">AC13.05 - Comprendre l'architecture et les technologies des applications web</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Preuves</h2>
+        </div>
+        <div class="card-body">
+            <div class="proof-section">
+                <p>La compréhension de l'architecture web et des technologies associées est fondamentale pour le développement et la maintenance d'applications en ligne. Cette compétence est essentielle pour créer des solutions robustes et évolutives.</p>
+                
+                <a href="https://github.com/yassine1427/R109" target="_blank" class="github-button">
+                    <i class="fab fa-github"></i> Voir le projet sur GitHub
+                </a>
+
+                <h3>Exemples de code et projets réalisés :</h3>
+            </div>
+
+            <div class="code-block">
+                <div class="code-title">Lecture d'un fichier FASTA</div>
+                <pre>
+def lire_fasta(nom_fichier):
+    sequences = {}
+    with open(nom_fichier, 'r') as fichier:
+        sequence_courante = ''
+        nom_sequence = ''
+        for ligne in fichier:
+            ligne = ligne.strip()
+            if ligne.startswith('>'):
+                if nom_sequence:
+                    sequences[nom_sequence] = sequence_courante
+                nom_sequence = ligne[1:]
+                sequence_courante = ''
+            else:
+                sequence_courante += ligne
+        if nom_sequence:
+            sequences[nom_sequence] = sequence_courante
+    return sequences</pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-title">Correction de fichiers texte</div>
+                <pre>
+def corriger_fichier(chemin_fichier):
+    try:
+        with open(chemin_fichier, 'r', encoding='utf-8') as f:
+            contenu = f.read()
+        
+        # Correction des espaces multiples
+        contenu_corrige = ' '.join(contenu.split())
+        
+        with open(chemin_fichier[:-4] + '_corrige.txt', 'w', encoding='utf-8') as f:
+            f.write(contenu_corrige)
+        
+        return True
+    except Exception as e:
+        print(f"Erreur lors de la correction : {e}")
+        return False</pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-title">Validation avec expressions régulières</div>
+                <pre>
+import re
+
+def valider_email(email):
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return bool(re.match(pattern, email))
+
+def valider_telephone(numero):
+    pattern = r'^(\+33|0)[1-9](\d{2}){4}$'
+    return bool(re.match(pattern, numero))</pre>
+            </div>
+
+            <div class="code-block">
+                <div class="code-title">Traitement de fichiers ICS</div>
+                <pre>
+from icalendar import Calendar, Event
+from datetime import datetime
+
+def creer_evenement_ics(titre, debut, fin, description):
+    cal = Calendar()
+    event = Event()
+    
+    event.add('summary', titre)
+    event.add('dtstart', debut)
+    event.add('dtend', fin)
+    event.add('description', description)
+    
+    cal.add_component(event)
+    
+    with open('evenement.ics', 'wb') as f:
+        f.write(cal.to_ical())</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h2>Analyse réflexive</h2>
+        </div>
+        <div class="card-body">
+            <h3>Introduction</h3>
+            <p>Mon parcours dans la compréhension de l'architecture web et des technologies associées a été une expérience enrichissante qui m'a permis de développer des compétences essentielles en développement web.</p>
+
+            <h3>État initial : Difficultés rencontrées</h3>
+            <ul>
+                <li>Compréhension limitée des concepts d'architecture web</li>
+                <li>Difficulté à manipuler différents formats de fichiers</li>
+                <li>Manque de maîtrise des expressions régulières</li>
+                <li>Peu d'expérience dans la gestion des erreurs</li>
+            </ul>
+
+            <h3>Stratégies de progression</h3>
+            <p>Pour surmonter ces obstacles, j'ai mis en place plusieurs stratégies :</p>
+            <ul>
+                <li>Formation approfondie sur les architectures web modernes</li>
+                <li>Pratique régulière avec différents formats de données</li>
+                <li>Réalisation de projets concrets</li>
+                <li>Participation à des projets collaboratifs sur GitHub</li>
+                <li>Veille technologique constante</li>
+            </ul>
+
+            <h3>Résultats obtenus</h3>
+            <p>Ces efforts ont abouti à des résultats significatifs :</p>
+            <ul>
+                <li>Maîtrise des concepts fondamentaux de l'architecture web</li>
+                <li>Capacité à manipuler efficacement différents formats de données</li>
+                <li>Compétences avancées en expressions régulières</li>
+                <li>Mise en place de bonnes pratiques de développement</li>
+                <li>Contribution à des projets open source</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>Cette compétence en architecture et technologies web est devenue un atout majeur dans mon parcours professionnel. Elle me permet de contribuer efficacement à des projets web complexes et de continuer à évoluer dans ce domaine en constante évolution.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
